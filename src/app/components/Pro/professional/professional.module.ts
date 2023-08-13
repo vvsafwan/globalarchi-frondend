@@ -26,6 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { MatIconModule } from '@angular/material/icon';
 import { SocketIoModule } from 'ngx-socket-io';
 import { ProNavComponent } from '../pro-nav/pro-nav.component';
+import { ProBookinglistComponent } from '../pro-bookinglist/pro-bookinglist.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { ProNavComponent } from '../pro-nav/pro-nav.component';
     ProprofileComponent,
     ChatsComponent,
     ContactsComponent,
-    ProNavComponent
+    ProNavComponent,
+    ProBookinglistComponent
   ],
   imports: [
     CommonModule,

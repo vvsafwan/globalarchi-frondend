@@ -17,11 +17,12 @@ import { ProeditbusdetailsComponent } from '../proeditbusdetails/proeditbusdetai
 import { ProeditprodetailsComponent } from '../proeditprodetails/proeditprodetails.component';
 import { ProprofileComponent } from '../proprofile/proprofile.component';
 import { ChatsComponent } from '../chats/chats.component';
-import { ProGuard, ProGuardlet } from '../../guards/pro-guard.guard';
+import { ProGuard, ProGuardcon, ProGuardlet } from '../../guards/pro-guard.guard';
+import { ProBookinglistComponent } from '../pro-bookinglist/pro-bookinglist.component';
 
 const routes: Routes = [
   {path:'',component:ProHomeComponent,canActivate:[ProGuardlet]},
-  {path:'login',component:ProLoginComponent,canActivate:[ProGuard]},
+  {path:'login',component:ProLoginComponent,canActivate:[ProGuard,ProGuardcon]},
   {path:'register',component:ProRegisterComponent},
   {path:'verify/:id',component:ProOtpComponent},
   {path:'forgotpassword',component:ProForgotpasswordComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path:'editprojectdetails/:id/:name/:address',component:ProeditprodetailsComponent,canActivate:[ProGuardlet]},
   {path:'profile',component:ProprofileComponent,canActivate:[ProGuardlet]},
   {path:'chat',component:ChatsComponent,canActivate:[ProGuardlet]},
+  {path:'bookings',component:ProBookinglistComponent,canActivate:[ProGuardlet]},
 ];
 
 @NgModule({

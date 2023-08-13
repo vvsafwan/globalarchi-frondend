@@ -10,12 +10,12 @@ import { AdminfirmlistComponent } from '../adminfirmlist/adminfirmlist.component
 import { AdminprofessionallistComponent } from '../adminprofessionallist/adminprofessionallist.component';
 import { AdmineditfirmlistComponent } from '../admineditfirmlist/admineditfirmlist.component';
 import { AdminverifybusinessComponent } from '../adminverifybusiness/adminverifybusiness.component';
-import { AdminGuard, AdminGuardlet } from '../../guards/admin-guard.guard';
+import { AdminGuard, AdminGuardlet, AdminGuardletcon } from '../../guards/admin-guard.guard';
 import { AdminbookingsComponent } from '../adminbookings/adminbookings.component';
 
 const routes: Routes = [
   {path:'',component:DashboardComponent,canActivate:[AdminGuardlet]},
-  {path:'login',component:AdminLoginComponent,canActivate:[AdminGuard]},
+  {path:'login',component:AdminLoginComponent,canActivate:[AdminGuard,AdminGuardletcon]},
   {path:'addbanner',component:AdminaddbannerComponent,canActivate:[AdminGuardlet]},
   {path:'listbanner',component:AdminlistbannerComponent,canActivate:[AdminGuardlet]},
   {path:'userlist',component:AdminuserlistComponent,canActivate:[AdminGuardlet]},

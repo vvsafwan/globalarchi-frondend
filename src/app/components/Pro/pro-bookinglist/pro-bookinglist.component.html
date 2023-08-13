@@ -1,0 +1,36 @@
+<div class="body">
+    <main class="table">
+        <section class="table__header">
+            <h1>Bookings</h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Si</th>
+                        <th>Name</th>
+                        <th>Mobile</th>
+                        <th>Place</th>
+                        <th>Pincode</th>
+                        <th>Payment Status</th>
+                        <th>date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngIf="bookingdata">
+                        <tr *ngFor="let data of bookingdata; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{data.name}}</td>
+                            <td>{{data.mobile}}</td>
+                            <td>{{data.place}},{{data.state}},{{data.country}}</td>
+                            <td>{{data.pincode}}</td>
+                            <td *ngIf="data.status==true" style="color: green;">Success</td>
+                            <td *ngIf="data.status==false" style="color: red;">Failed</td>
+                            <td><strong>{{data.date.substring(0,10)}}</strong></td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>

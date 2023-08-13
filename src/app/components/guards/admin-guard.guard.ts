@@ -38,3 +38,25 @@ export class AdminGuardlet {
     }
   }
 }
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AdminGuardletcon {
+
+  constructor(public router: Router) {
+  }
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+      const session = localStorage.getItem('session')
+      const protoken = localStorage.getItem('prosession')
+      if(session){
+        this.router.navigate(['/'])
+        return false
+      }else if (protoken) {
+        this.router.navigate(['/pro']);
+        return false;
+     } else {
+       return true;
+     }
+  }
+}

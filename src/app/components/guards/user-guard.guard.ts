@@ -39,25 +39,25 @@ export class UserGuardlet {
   }
 }
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+  providedIn: 'root'
+})
 
-// export class UserGuardcon implements CanActivate {
+export class UserGuardcon implements CanActivate {
 
-//   constructor(private router: Router) {}
+  constructor(private router: Router) {}
 
-//   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-//     const admintoken = localStorage.getItem('adminsession')
-//     const protoken = localStorage.getItem('prosession')
-//     if(admintoken){
-//       this.router.navigate(['/admin'])
-//       return false
-//     }else if (protoken) {
-//       this.router.navigate(['/pro']);
-//       return false;
-//    } else {
-//      return true;
-//    }
-//   }
-// }
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    const admintoken = localStorage.getItem('adminsession')
+    const protoken = localStorage.getItem('prosession')
+    if(admintoken){
+      this.router.navigate(['/admin'])
+      return false
+    }else if (protoken) {
+      this.router.navigate(['/pro']);
+      return false;
+   } else {
+     return true;
+   }
+  }
+}

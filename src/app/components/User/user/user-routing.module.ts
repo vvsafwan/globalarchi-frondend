@@ -12,14 +12,14 @@ import { FirmdetailsComponent } from '../firmdetails/firmdetails.component';
 import { ProjectdetailsComponent } from '../projectdetails/projectdetails.component';
 import { UserprofileComponent } from '../userprofile/userprofile.component';
 import { ChatComponent } from '../chat/chat.component';
-import { UserGuard, UserGuardlet } from '../../guards/user-guard.guard';
+import { UserGuard, UserGuardcon, UserGuardlet } from '../../guards/user-guard.guard';
 import { BookingComponent } from '../booking/booking.component';
 import { BookinglistComponent } from '../bookinglist/bookinglist.component';
 import { ReviewComponent } from '../review/review.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent,canActivate:[UserGuardlet]},
-  {path:'login',component:LoginComponent,canActivate:[UserGuard]},
+  {path:'login',component:LoginComponent,canActivate:[UserGuard,UserGuardcon]},
   {path:'register',component:RegisterComponent},
   {path:'verify/:id',component:OtpComponent},
   {path:'forgotpassword',component:ForgotpasswordComponent},

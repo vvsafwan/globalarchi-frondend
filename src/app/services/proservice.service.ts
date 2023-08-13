@@ -134,4 +134,8 @@ export class ProserviceService {
     return this.http.get(`${this.apiUrl}/proprofile`)
   }
 
+  loadprobookings(): Observable<any>{
+    return this.http.get(`${this.apiUrl}/loadprobookings`)
+  }
+
 }

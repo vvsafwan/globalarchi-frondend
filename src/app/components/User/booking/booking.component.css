@@ -1,0 +1,33 @@
+.content{
+    background-color: rgb(0, 0, 0);
+    padding-bottom: 20px;
+}
+.contentin{
+    text-align: center;
+}
+.basicinfo{
+    font-size: 40px;
+    font-weight: 600;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+}
+.form{
+    background-color: white;
+    padding: 100px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.anchor{
+    color: red;
+    text-decoration: none;
+}
+.inputclr{
+    background-color: #f6f4f4;
+    font-size: 15px;
+}
+.page{
+    background: url('../../../../assets/img/homeImg2.jpg') no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    padding-bottom: 150px;
+}

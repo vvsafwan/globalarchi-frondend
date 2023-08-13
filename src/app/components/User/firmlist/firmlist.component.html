@@ -1,0 +1,42 @@
+<app-usernav></app-usernav>
+<div class="container">
+    <div class="col-md-12 blank"></div>
+    <div class="col-md-12 searchsection">
+        <div>
+            <h2 style="color: white;">Get Matched with Local Professionals</h2>
+            <p style="color: white;">Answer a few questions and we’ll put you in touch with pros who can help.</p>
+            <input type="text" [(ngModel)]="searchTerm" class="form-control" placeholder="Search here">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 mb-4 d-none d-md-block" style="min-height: 500px;">
+            <!-- Content for the first column (left side) -->
+        </div>
+        <div *ngIf="(allFirmdata$ | async) as firmdata" class="col-md-8" style="min-height: 500px;">
+            <div *ngFor="let firm of firmdata | searchpipe: searchTerm" class="col-md-12 col-12 mb-4" style="min-height: 300px; box-shadow: 5px 5px 10px grey;border-radius: 10px;">
+                <div class="row container">
+                    <div class="col-md-4 col-12" style="min-height: 300px;">
+                        <a (click)="firmdetails(firm.userid)"><img src="http://localhost:3000/file/{{firm.image}}" alt="" class="firmimg img-fluid"></a>
+                    </div>
+                    <div class="col-md-8 col-12" style="min-height: 300px;">
+                        <div class="row container">
+                            <div class="col-md-8" style="min-height: 300px; display: flex; justify-content: center; flex-direction: column;">
+                                <h3>{{firm.companyname}}</h3>
+                                <p>{{firm.address}},<br>{{firm.city}},<br>{{firm.state}},{{firm.country}},<br>{{firm.pincode}}</p>
+                            </div>
+                            <div class="col-md-4 my-auto" style="min-height: 300px; display: flex; justify-content: center; flex-direction: column;">
+                                <button (click)="chatconnection(firm.userid)" class="btn btn-success mb-4">send message</button>
+                                <button (click)="addReview(firm.userid)" class="btn btn-danger mb-4">Add Review</button>
+                                <p><b>Mobile: </b>{{firm.mobile}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 mb-4 d-none d-md-block" style="min-height: 500px;">
+            <!-- Content for the third column (right side) -->
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,99 @@
+<div class="page">
+    <app-pro-nav></app-pro-nav>
+<div style="height: 150px;"></div>
+<div class="container content">
+    <div class="contentin">
+        <p class="basicinfo">Project Content</p>
+    </div>
+    <div class="form col-md-12 mx-auto">
+        <div>
+            <h4 class="pb-3">Upload the content of a Project</h4>
+        </div>
+        <form [formGroup]="projectdetails" (ngSubmit)="projectSubmit()">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example1">Project Name</label>
+                  <input type="text" id="form6Example1" formControlName="projectname" class="form-control inputclr" placeholder="Minimum 4 char" />
+                  <div class="form-text text-danger pt-2" *ngIf="projectname.errors?.['required'] && (projectname.touched || projectname.dirty || invalid)">
+                    Name is required
+                  </div>
+                  <div class="form-text text-danger pt-2" *ngIf="projectname.errors?.['minlength'] && (projectname.touched || projectname.dirty)">
+                    Name is short
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+              </div>
+            </div>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example1">Project Address</label>
+                  <input type="text" id="form6Example1" formControlName="projectaddress" class="form-control inputclr about" placeholder="Enter project address" />
+                  <div class="form-text text-danger pt-2" *ngIf="projectaddress.errors?.['required'] && (projectaddress.touched || projectaddress.dirty || invalid)">
+                    Address is required
+                </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example2">Project Year</label>
+                  <input type="text" id="form6Example2" formControlName="projectyear" class="form-control inputclr" placeholder="Enter project year" />
+                  <div class="form-text text-danger pt-2" *ngIf="projectyear.errors?.['required'] && (projectyear.touched || projectyear.dirty || invalid)">
+                    Year is required
+                </div>
+                <div class="form-text text-danger pt-2" *ngIf="projectyear.errors?.['pattern'] && (projectyear.touched || projectyear.dirty)"> 
+                  Year shouldn't be in Alphebet.
+              </div>
+                </div>
+              </div>
+            </div>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example1">project cost</label>
+                  <input type="text" id="form6Example1" formControlName="projectcost" class="form-control inputclr" placeholder="Enter project cost" />
+                  <div class="form-text text-danger pt-2" *ngIf="projectcost.errors?.['required'] && (projectcost.touched || projectcost.dirty || invalid)">
+                    Cost is required
+                </div>
+                <div class="form-text text-danger pt-2" *ngIf="projectcost.errors?.['pattern'] && (projectcost.touched || projectcost.dirty)"> 
+                  Cost shouldn't be in Alphebet.
+              </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example2">Link to the website(optional)</label>
+                  <input type="text" id="form6Example2" formControlName="projectlink" class="form-control inputclr" placeholder="Enter you project Link" />
+                </div>
+              </div>
+            </div>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <label for="formFileLg" class="form-label">Large file input example</label>
+                <div class="form-outline">
+                    <input class="form-control form-control-lg" formControlName="image" name="image" (change)="onFileChange($event)" id="formFileLg" type="file" multiple />  
+                    <div class="form-text text-danger pt-2" *ngIf="image.errors?.['required'] && (image.touched || image.dirty || invalid)">
+                      Image is required
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+              </div>
+            </div>
+          
+            
+            <!-- Submit button -->
+            <div class="text-center">
+                <button routerLink="/pro/businessdetails" class="btn btn-dark mb-4 mt-4 pe-5 ps-5 pt-2 pb-2 me-2">Go Back</button>
+                <button type="submit" class="btn btn-dark mb-4 mt-4 pe-5 ps-5 pt-2 pb-2">Continue</button>
+            </div>
+          </form>
+    </div>
+</div>
+</div>

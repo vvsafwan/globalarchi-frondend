@@ -1,0 +1,7 @@
+.blank{
+    height: 150px;
+}
+.firmimg:hover{
+    scale: 1.02;
+    transition: 0.5s;
+}

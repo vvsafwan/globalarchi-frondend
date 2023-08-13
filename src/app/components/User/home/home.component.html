@@ -1,0 +1,78 @@
+<app-usernav></app-usernav>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item homecarousel active">
+        <img src="http://localhost:3000/file/{{image}}" class="d-block w-100 homecarouselimg" alt="carousel1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{header}}</h5>
+          <p>{{description}}</p>
+        </div>
+      </div>
+      <div *ngFor="let banner of bannerdata;" class="carousel-item homecarousel">
+        <img src="http://localhost:3000/file/{{banner.image}}" class="d-block w-100 homecarouselimg" alt="carousel1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{banner.header}}</h5>
+          <p>{{banner.description}}</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+  <div class="container">
+    <div class="col-md-8 col-12 homesection1">
+        <h4>Green Architecture meets Collaborative Design</h4>
+        <p>The architecture community website is an online platform dedicated to fostering collaboration, knowledge sharing, and networking among architects, designers, students, and enthusiasts. It serves as a hub where individuals passionate about architecture can connect, exchange ideas, and explore the latest trends and advancements in the field.</p>
+    </div>
+  </div>
+  <div class="col-md-12 homesection2">
+        <div class="col-md-8 col-12 text-center homesection2div">
+            <p>We Invite you to discover varieties of works done by different professional architects by exploring our website.Search different varieties of designs across the world and contact the artists for you dream home making</p>
+        </div>
+  </div>
+  <div class="container">
+    <div class="row adsection1">
+        <div class="col-md-6 col-12 homesection1 textend">
+            <h4>About</h4>
+            <p>The website offers a range of features and resources designed to support the architecture community. It provides a platform for architects to showcase their projects, share their design philosophies, and gain recognition for their work. Users can browse through a diverse collection of architectural designs, ranging from residential buildings to commercial complexes, and find inspiration for their own projects.</p>
+        </div>
+        <div class="col-md-6 adimg1div">
+            <img src="../../../../assets/img/homead1.jpg" alt="About image" class="adimg1">
+        </div>
+    </div>
+    <div class="row adsection1">
+      <div class="col-md-6 adimg1div">
+          <img src="../../../../assets/img/homead2.jpg" alt="About image" class="adimg1">
+      </div>
+        <div class="col-md-6 col-12 homesection1">
+            <h4>Create Community</h4>
+            <p>Taking into account the social, economic and ecological context, we encourage dynamic, healthy communities through design. We master plan for a balance of shared and private space that invites conviviality. Community involvement in the process ensures that all members are heard and honored.The website also offers discussion forums and chat rooms where members can engage in lively conversations, seek advice, and collaborate on design challenges. These interactive features facilitate knowledge exchange and allow professionals and students to learn from each other's experiences.</p>
+        </div>
+    </div>
+    <div class="row adsection1">
+        <div class="col-md-6 col-12 homesection1 textend">
+            <h4>In The Making</h4>
+            <p>Architecture is a process of discovery. Applying our experience, values, and high standards of design, quality and sustainability, our team of architects and extended network of consultants approach each project with flexibility and enthusiasm for the unique progression of each one-of-a-kind project.
+            </p>
+        </div>
+        <div class="col-md-6 adimg1div">
+            <img src="../../../../assets/img/homead3.jpg" alt="About image" class="adimg1">
+        </div>
+    </div>
+    <div class="row adsection1">
+      <div class="col-md-6 adimg1div">
+          <img src="../../../../assets/img/homead4.jpg" alt="About image" class="adimg1">
+      </div>
+        <div class="col-md-6 col-12 homesection1">
+            <h4>Connect to Nature</h4>
+            <p>We connect people spatially and visually to nature, creating a sense of belonging, even as sustainable design techniques reduce impact. New structures embrace the natural site features of the existing landscape. Each building’s siting and orientation invite the enjoyment of natural light and thermal delight.</p>
+        </div>
+    </div>
+  </div>
+  <app-footer></app-footer>

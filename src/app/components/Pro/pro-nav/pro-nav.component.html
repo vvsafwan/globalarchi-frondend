@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg w-100 navbar-light navbgcolor navclr pe-4 ps-4" style="position: fixed;z-index: 5;" [class.header_change]="header_variable">
+    <img src="../../../../assets/img/navImg.png" alt="Logo" width="350px">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/pro">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/pro/firmdetailslist">My Firm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/pro/addbasicinfo">Add Firm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/pro/businessdetails">Add Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/pro/projectdetails">Add Project</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/pro/chat">Chats</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/pro/profile">Profile</a>
+              <a class="dropdown-item" routerLink="/pro" (click)="logout()">Logout</a>
+            </div>
+          </li>
+        <!-- <li *ngIf="!auth" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Account 
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" routerLink="/pro/login">Login</a>
+              <a class="dropdown-item" routerLink="/pro/register">Register</a>
+            </div>
+          </li> -->
+      </ul>
+    </div>
+</nav>

@@ -1,0 +1,103 @@
+<div class="page">
+    <app-pro-nav></app-pro-nav>
+<div style="height: 150px;"></div>
+<div class="container content">
+    <div class="contentin">
+        <p class="basicinfo">Business Details</p>
+    </div>
+    <div class="form col-md-12 mx-auto">
+        <div>
+            <h4 class="pb-3">Business Details</h4>
+        </div>
+        <form [formGroup]="businessdetails" (ngSubmit)="businessdetailsSubmit()">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example1">Website</label>
+                  <input type="text" id="form6Example1" formControlName="website" class="form-control inputclr" placeholder="Your website link" />
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example2">Budget</label>
+                  <input type="text" id="form6Example2" formControlName="budget" class="form-control inputclr" placeholder="Enter Budget" />
+                  <div class="form-text text-danger pt-2" *ngIf="budget.errors?.['required'] && (budget.touched || budget.dirty || invalid)">
+                    Budget is required
+                </div>
+                <div class="form-text text-danger pt-2" *ngIf="budget.errors?.['pattern'] && (budget.touched || budget.dirty)"> 
+                  Budget shouldn't be in Alphebet.
+              </div>
+                </div>
+              </div>
+            </div>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example1">About</label>
+                  <input type="text" id="form6Example1" formControlName="about" class="form-control inputclr about" />
+                  <div class="form-text text-danger pt-2" *ngIf="about.errors?.['required'] && (about.touched || about.dirty || invalid)">
+                   About is required
+                </div>
+                <div class="form-text text-danger pt-2" *ngIf="about.errors?.['minlength'] && (about.touched || about.dirty)">
+                    About needs min 80 characters
+                </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example2">Cost details</label>
+                  <input type="text" id="form6Example2" formControlName="costdetails" class="form-control inputclr about"  />
+                  <div class="form-text text-danger pt-2" *ngIf="costdetails.errors?.['required'] && (costdetails.touched || costdetails.dirty || invalid)">
+                    Cost details is required
+                </div>
+                </div>
+              </div>
+            </div>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example1">Business Description</label>
+                  <input type="text" id="form6Example1" formControlName="businessdescription" class="form-control inputclr about" />
+                  <div class="form-text text-danger pt-2" *ngIf="businessdescription.errors?.['required'] && (businessdescription.touched || businessdescription.dirty || invalid)">
+                    Business description is required
+                </div>
+                <div class="form-text text-danger pt-2" *ngIf="businessdescription.errors?.['minlength'] && (businessdescription.touched || businessdescription.dirty)">
+                  Business description needs min 80 characters
+              </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <label for="formFileLg" class="form-label">Firm Licence</label>
+                    <input class="form-control form-control-lg" formControlName="image" name="image" (change)="onFileSelected($event)" id="formFileLg" type="file" />
+                    <div class="form-text text-danger pt-2" *ngIf="image.errors?.['required'] && (image.touched || image.dirty || invalid)">
+                      Licence is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="form6Example1">Awards(optional)</label>
+                  <input type="text" id="form6Example1" formControlName="awards" class="form-control inputclr" placeholder="Awards for your firm" />
+                </div>
+              </div>
+              <div class="col">
+              </div>
+            </div>
+          
+            
+            <!-- Submit button -->
+            <div class="text-center">
+                <button routerLink="/pro/addbasicinfo" class="btn btn-dark mb-4 mt-4 pe-5 ps-5 pt-2 pb-2 me-2">Go Back</button>
+                <button type="submit" class="btn btn-dark mb-4 mt-4 pe-5 ps-5 pt-2 pb-2">Continue</button>
+            </div>
+          </form>
+    </div>
+</div>
+</div>

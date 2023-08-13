@@ -1,0 +1,97 @@
+<app-usernav></app-usernav>
+<section style="background-color: #eee;min-height: 100vh;max-height: fit-content;">
+  <div style="height: 100px;background-color: #eee;"></div>
+    <div class="container py-5" >
+  
+      <div class="row">
+  
+        <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+  
+          <h5 class="font-weight-bold mb-3 text-center text-lg-start">Member</h5>
+  
+          <div class="card">
+            <div class="card-body">
+  
+              <ul class="list-unstyled mb-0" *ngFor="let data of userdata">
+                <app-contact [data]="data"></app-contact>
+              </ul>
+  
+            </div>
+          </div>
+  
+        </div>
+  
+        <div class="col-md-6 col-lg-7 col-xl-8">
+
+          <div *ngIf="!chatshow" style="position: relative; height: 450px; overflow-y: auto;">
+            <div class="d-flex justify-content-center items-center h-full rounded-r-lg mt-5" >
+            <img
+              src="https://i.pinimg.com/originals/e3/1b/75/e31b752875679b64fce009922f9f0dda.gif"
+              class="h-64 rounded-3xl"
+              alt=""
+              srcset=""
+              style="height: 300px; width: 300px;"
+            />
+            
+           
+          </div>
+          <div class="d-flex justify-content-center">
+            <p class="font-semibold text-lg mt-3 font-mono">
+                Select a chat to start message :)
+              </p>
+
+        </div>
+
+        </div>
+  
+         
+        <div *ngIf="chatshow">
+          <ul class="list-unstyled" *ngFor="let chat of messages">
+            <li class="d-flex justify-content-between mb-4" *ngIf="chat.to!=viewerid">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
+                class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
+              <div class="card">
+                <div class="card-header d-flex justify-content-between p-3">
+                  <p class="fw-bold mb-0">Brad Pitt</p>
+                  <p class="text-muted small mb-0 ms-3"> {{chat.createdAt | date : "short"}}</p>
+                </div>
+                <div class="card-body">
+                  <p class="mb-0">
+                    {{chat.message}}
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="d-flex justify-content-between mb-4" *ngIf="chat.to==viewerid">
+              <div class="card w-100">
+                <div class="card-header d-flex justify-content-between p-3">
+                  <p class="fw-bold mb-0">Lara Croft</p>
+                  <p class="text-muted small mb-0 ms-3"> {{chat.createdAt | date : "short"}}</p>
+                </div>
+                <div class="card-body">
+                  <p class="mb-0">
+                    {{chat.message}}
+                  </p>
+                </div>
+              </div>
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp" alt="avatar"
+                class="rounded-circle d-flex align-self-start ms-3 shadow-1-strong" width="60">
+            </li>
+          </ul>
+        </div>
+        
+        <form (ngSubmit)="submit()" *ngIf="chatshow">
+                <div class="form-outline mb-3 bg-white">
+                    <input type="text" [(ngModel)]="message" name="message"  class="form-control " id="message" style="padding: 20px;"
+                    >
+                    <label class="form-label" for="textAreaExample2">Message</label>
+                </div>
+              <button type="submit" class="btn btn-info btn-rounded float-end">Send</button>
+        </form>
+      </div>
+  
+      </div>
+  
+    </div>
+  </section>
+  <app-footer></app-footer>

@@ -1,0 +1,67 @@
+<app-pro-nav></app-pro-nav>
+<div style="height: 150px;"></div>
+<div class="container" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+    <div class="col-md-12 col-12 mb-4" style="min-height: 300px;">
+        <div class="row container">
+            <div class="col-md-4 col-12" style="min-height: 300px;">
+                <a><img src="http://localhost:3000/file/{{image}}" alt="" class="firmimg img-fluid"></a>
+            </div>
+            <div class="col-md-8 col-12" style="min-height: 300px;">
+                <div class="container">
+                    <div class="col-md-8" style="min-height: 300px; display: flex; justify-content: center; flex-direction: column;">
+                        <h3>{{companyname}}</h3>
+                        <p>{{address}},<br>{{city}},<br>{{state}},{{country}},<br>{{pincode}}</p>
+                    </div>
+                    <div class="col-md-4 my-auto" style="min-height: 300px; display: flex; justify-content: center; flex-direction: column;">
+                        <button class="btn btn-success mb-4" (click)="editbasicinfo()">Edit BasicInfo</button>
+                        <p><b>Mobile: </b>{{mobile}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 blank"></div>
+    <div class="col-md-4" style="display: flex; justify-content: center; flex-direction: column;">
+        <button (click)="editbusinessdetails()" class="btn btn-success mb-3" style="width: 50%;">Edit Businessdetails</button>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-12">
+            <img src="http://localhost:3000/file/{{image2}}" alt="" class="imgfirm">
+        </div>
+    </div>
+    <div class="col-md-12">
+        <h4 style="margin: 50px 0 20px 0;color: #ac9b7a;">About</h4>
+        <p>{{about}}</p>
+    </div>
+    <div class="col-md-12">
+        <h4 style="margin: 50px 0 20px 0;color: #ac9b7a;">Business Description</h4>
+        <p>{{businessdescription}}</p>
+    </div>
+    <div class="col-md-12">
+        <h4 style="margin: 50px 0 20px 0;color: #ac9b7a;">Cost Details</h4>
+        <p>{{costdetails}}</p>
+    </div>
+    <div class="col-md-12">
+        <h4 style="margin: 50px 0 20px 0;color: #ac9b7a;">Awards</h4>
+        <p>{{awards}}</p>
+    </div>
+    <div class="row">
+        <h4 style="margin: 50px 0 20px 0;color: #ac9b7a;">Projects</h4>
+        <div *ngFor="let project of projectdata" class="col-md-4 col-12 mt-5" style="height: 300px;">
+            <div class="col-md-8 mx-auto" style="height: 300px;">
+                <div class="col-md-12" style="height: 200px;">
+                    <a (click)="projectdetails(userid,project.projectname,project.projectaddress)"><img class="firmimg" src="http://localhost:3000/file/{{project.image[0]}}" alt="No img" style="object-fit: cover;width: 100%;height: 200px;"></a>
+                </div>
+                <div style="display: flex;align-items: center;justify-content: center;flex-direction: column;height: 100px;">
+                    <div>
+                        <p style="margin: 0;">{{project.projectname}}</p>
+                    </div>
+                    <div>
+                        <p style="color: grey;margin: 0;">{{project.projectaddress}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

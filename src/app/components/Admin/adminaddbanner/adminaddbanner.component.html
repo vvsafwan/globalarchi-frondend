@@ -1,0 +1,31 @@
+<app-adminnav></app-adminnav>
+<div class="row">
+    <div class="col-md-3 col-12 sidebar">
+        <app-adminsidebar></app-adminsidebar>
+    </div>
+    <div class="col-md-9 col-12">
+        <div class="container mx-auto addbannerform">
+            <form [formGroup]="addbannerForm" (ngSubmit)="addbannerformsubmit()">
+                <div class="form-group mb-4">
+                  <label class="pb-2" for="exampleInputPassword1">Header</label>
+                  <input type="text" formControlName="header" class="form-control p-2" id="exampleInputPassword1" placeholder="header" required>
+                  <div class="form-text text-danger pt-2" *ngIf="header.errors?.['required'] && (header.touched || header.dirty || invalid)">
+                    Header is required
+                  </div>
+                </div>
+                <div class="form-group mb-4">
+                  <label class="pb-2" for="exampleInputPassword1">Description</label>
+                  <input type="text" formControlName="description" class="form-control p-2" id="exampleInputPassword1" placeholder="Description" required>
+                  <div class="form-text text-danger pt-2" *ngIf="description.errors?.['required'] && (description.touched || description.dirty || invalid)">
+                    Description is required
+                  </div>
+                </div>
+                <div class="form-group mb-4">
+                    <label class="form-label pb-2" for="customFile">Upload Banner</label>
+                    <input type="file" formControlName="image" name="image" class="form-control p-2" id="customFile" (change)="onFileSelected($event)" multiple required/>
+                </div>
+                <button type="submit" class="btn btn-danger bttn">Submit</button>
+              </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.bttn{
+    padding: 5px 20px 5px 20px;
+}
+.addbannerform{
+    margin-top: 150px;
+}

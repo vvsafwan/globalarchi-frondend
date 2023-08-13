@@ -1,0 +1,119 @@
+<div class="page">
+    <!-- <app-usernav></app-usernav> -->
+<div style="height: 150px;"></div>
+<div class="container content">
+    <div class="contentin">
+        <p class="basicinfo">Booking</p>
+    </div>
+    <div class="form col-md-12 mx-auto">
+        <form [formGroup]="bookingForm" (ngSubmit)="bookingformsubmit()">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="form6Example1">Name</label>
+                  <input type="text" id="form6Example1" formControlName="name" class="form-control inputclr" placeholder="Enter Name" />
+                  <div class="form-text text-danger pt-2" *ngIf="name.errors?.['required'] && (name.touched || name.dirty || invalid)">
+                    Name is required
+                </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="form6Example2">Place</label>
+                  <input type="text" id="form6Example2" formControlName="place" class="form-control inputclr" placeholder="Enter your Place" />
+                  <div class="form-text text-danger pt-2" *ngIf="place.errors?.['required'] && (place.touched || place.dirty || invalid)">
+                    Place is required
+                </div>
+                </div>
+              </div>
+            </div>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="form6Example1">Mobile</label>
+                    <input type="text" id="form6Example1" formControlName="mobile" class="form-control inputclr" placeholder="Enter Mobile" />
+                    <div class="form-text text-danger pt-2" *ngIf="mobile.errors?.['required'] && (mobile.touched || mobile.dirty || invalid)">
+                        Mobile is required
+                    </div>
+                    <div class="form-text text-danger pt-2" *ngIf="mobile.errors?.['minlength'] && (mobile.touched || mobile.dirty) && !mobile.errors?.['pattern']"> 
+                      Mobile is too Short.
+                  </div>
+                  <div class="form-text text-danger pt-2" *ngIf="mobile.errors?.['maxlength'] && (mobile.touched || mobile.dirty) && !mobile.errors?.['pattern']"> 
+                      Mobile is too Long.
+                  </div>
+                  <div class="form-text text-danger pt-2" *ngIf="mobile.errors?.['pattern'] && (mobile.touched || mobile.dirty)"> 
+                      Mobile should be in Numbers.
+                  </div>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="form6Example2">State</label>
+                  <input type="text" id="form6Example2" formControlName="state" class="form-control inputclr" placeholder="Enter your state" />
+                  <div class="form-text text-danger pt-2" *ngIf="state.errors?.['required'] && (state.touched || state.dirty || invalid)">
+                    State is required
+                </div>
+                </div>
+              </div>
+            </div>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="form6Example1">Address *</label>
+                  <input type="text" id="form6Example1" formControlName="address" class="form-control inputclr" placeholder="Enter address" />
+                  <div class="form-text text-danger pt-2" *ngIf="address.errors?.['required'] && (address.touched || address.dirty || invalid)">
+                    Address is required
+                </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="form6Example2">Country</label>
+                  <input type="text" id="form6Example2" formControlName="country" class="form-control inputclr" placeholder="Enter your Country" />
+                  <div class="form-text text-danger pt-2" *ngIf="country.errors?.['required'] && (country.touched || country.dirty || invalid)">
+                    Country is required
+                </div>
+                </div>
+              </div>
+            </div>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="form6Example2">PIN Code</label>
+                    <input type="text" id="form6Example2" formControlName="pincode" class="form-control inputclr" placeholder="Enter your PIN" />
+                    <div class="form-text text-danger pt-2" *ngIf="pincode.errors?.['required'] && (pincode.touched || pincode.dirty || invalid)">
+                        Pincode is required
+                    </div>
+                    <div class="form-text text-danger pt-2" *ngIf="pincode.errors?.['minlength'] && (pincode.touched || pincode.dirty)">
+                        Pincode is Short
+                    </div>
+                    <div class="form-text text-danger pt-2" *ngIf="pincode.errors?.['maxlength'] && (pincode.touched || pincode.dirty)">
+                        Pincode is Long
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="form6Example2">Date</label>
+                    <input type="date" id="form6Example2" formControlName="date" class="form-control inputclr" />
+                    <div class="form-text text-danger pt-2" *ngIf="date.errors?.['required'] && (date.touched || date.dirty || invalid)">
+                        Date is required
+                    </div>
+                  </div>
+              </div>
+            </div>
+          
+            
+            <!-- Submit button -->
+            <div class="text-center">
+                <button routerLink="/firmlist" class="btn btn-dark  mb-4 mt-4 pe-5 ps-5 pt-2 pb-2 me-2">Go Back</button>
+                <button type="submit" class="btn btn-dark  mb-4 mt-4 pe-5 ps-5 pt-2 pb-2">Continue</button>
+            </div>
+          </form>
+    </div>
+</div>
+</div>

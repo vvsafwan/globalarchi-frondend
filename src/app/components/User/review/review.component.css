@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.body{
+    min-height: 100vh;
+    min-width: 100vw;
+    background: url('../../../../assets/img/homead1.jpg') center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table__header{
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+}
+
+main.table{
+    width: 82vw;
+    height: 90vh;
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+    box-shadow: 0.4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: hidden;
+}
+
+.bttn{
+    width: 30%;
+    height: 45px;
+    background: #162938;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer; 
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+}
+  
+  .star {
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .filled {
+    color: gold;
+  }
+  
+  .clicked {
+    color: darkorange;
+  }
+
+/* td img {
+    width: 36px;
+    height: 36px;
+    margin-right: .5rem;
+    border-radius: 50%;
+    vertical-align: middle;
+
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+}
+
+
+.table__body{
+    width: 95%;
+    max-height: calc(89% - .8rem);
+    background-color: #fffb;
+    margin: .8rem auto;
+    border-radius: .6rem;
+    overflow: auto;
+}
+
+.table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb{
+   visibility: visible;
+}
+
+table{
+    width: 100%;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #3e474f;
+    color: white;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+tbody tr:nth-child(even){
+    background-color: #0000000b;
+}
+
+tbody tr:hover{
+    background-color: fff6;
+} */

@@ -1,0 +1,55 @@
+.homecarousel{
+    width: 100%;
+    height: 800px;
+}
+.homecarouselimg{
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+.homesection1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 90px 10px 90px 10px;
+}
+.homesection1 h4{
+    padding-bottom: 20px;
+    color: #163927;
+}
+.homesection1 p{
+    color: gray;
+}
+.homesection2{
+    width: 100%;
+    height: 400px;
+    background: url('../../../../assets/img/homeImg4.jpg') no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+.homesection2div{
+    background-color: #fff;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 35px 0px 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #163927;
+}
+.adimg1{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+.adimg1div{
+    height: 350px;
+}
+.adsection1{
+    padding: 80px 0 80px 0;
+}
+.textend{
+    text-align: end;
+}

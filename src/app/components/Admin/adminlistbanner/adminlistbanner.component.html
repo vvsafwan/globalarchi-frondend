@@ -1,0 +1,35 @@
+<app-adminnav></app-adminnav>
+<div class="row">
+    <div class="col-md-3 col-12 sidebar" >
+        <app-adminsidebar></app-adminsidebar>
+    </div>
+    <div class="col-md-9 col-12">
+        <div class="container mx-auto" style="overflow-x:auto;">
+            <table class="table table-striped tablelist">
+                <thead>
+                  <tr>
+                    <th scope="col">SI</th>
+                    <th scope="col">Header</th>
+                    <th scope="col">image</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="(bannerData$ | async) as bannerdata">
+                  <tr *ngFor="let banner of bannerdata;let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{banner.header}}</td>
+                    <td><img class="rounded-circle" [src]='"http://localhost:3000/file/"+banner.image' alt="No image" width="40px" height="35px"></td>
+                    <td >{{banner.description}}</td>
+                    <td>{{banner.status}}</td>
+                    <td>
+                      <button *ngIf="banner.status == true" class="btn btn-danger pt-1 pb-1 pe-5 ps-5" (click)="UnlistBanner(banner._id)">Unlist</button>
+                      <button *ngIf="banner.status == false" class="btn btn-warning pt-1 pb-1 pe-5 ps-5" (click)="ListBanner(banner._id)">List</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>  
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<app-adminnav></app-adminnav>
+<div class="row">
+    <div class="col-md-3 col-12 sidebar" >
+        <app-adminsidebar></app-adminsidebar>
+    </div>
+    <div class="col-md-9 col-12">
+        <div class="container mx-auto" style="overflow-x:auto;">
+            <table class="table table-striped tablelist">
+                <thead>
+                  <tr>
+                    <th scope="col">SI</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">UserId</th>
+                    <th scope="col">Company Name</th>
+                    <th scope="col">Company Address</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">Blocked</th>
+                    <th scope="col" style="width: 15%;">Action</th>
+                    <th scope="col">Verify Firm</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="(firmsList$ | async) as firmdata">
+                  <tr *ngFor="let firm of firmdata;let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td><img class="rounded-circle" [src]='"http://localhost:3000/file/"+firm.image' alt="No image" width="40px" height="35px"></td>
+                    <td>{{firm.userid}}</td>
+                    <td>{{firm.companyname}}</td>
+                    <td>{{firm.address}}, {{firm.city}}, {{firm.state}}, {{firm.country}}, {{firm.pincode}}</td>
+                    <td>{{firm.mobile}}</td>
+                    <td>{{firm.is_blocked}}</td>
+                    <td>
+                        <div>
+                          <button *ngIf="firm.is_blocked==false" class="btn btn-danger pt-1 pb-1 pe-2 ps-2" (click)="block(firm._id)">Block</button>
+                          <button *ngIf="firm.is_blocked==true" class="btn btn-warning pt-1 pb-1 pe-2 ps-2" (click)="unblock(firm._id)">Unblock</button>
+                          <button class="btn btn-success pt-1 pb-1 pe-2 ps-2 ms-2" (click)="edit(firm._id)">Edit</button>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary pt-1 pb-1 pe-5 ps-5" (click)="verify(firm.userid)">Verify</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>  
+    </div>
+</div>

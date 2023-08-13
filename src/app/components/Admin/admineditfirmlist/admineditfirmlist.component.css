@@ -1,0 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.tablelist{
+    margin-top: 150px;
+}
+.tablelist input{
+    padding: 10px;
+}
+.form{
+    background-color: white;
+    padding: 100px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.inputclr{
+    background-color: #f6f4f4;
+    font-size: 15px;
+}

@@ -1,0 +1,12 @@
+*{
+    font-weight: 600;
+}
+.header_change{
+    position: fixed;
+    background-color: rgba(256, 256, 256, .9);
+    width: 100%;
+    z-index: 1;
+}
+.navclr{
+    background-color: rgba(256, 256, 256, .8);
+}

@@ -1,0 +1,49 @@
+<app-adminnav></app-adminnav>
+<div class="row">
+    <div class="col-md-3 col-12 sidebar">
+        <app-adminsidebar></app-adminsidebar>
+    </div>
+    <div class="col-md-9 col-12">
+        <div class="container tablelist mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Business Details</h3>
+                    <h6 class="card-subtitle">Firm details with liscence</h6>
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5 col-sm-6">
+                            <div class="white-box text-center"><img src="http://localhost:3000/file/{{image}}" style="width: 100%;object-fit: scale-down;padding: 10px;" alt="No-img" class="img-responsive"></div>
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-sm-6">
+                            <h4 class="box-title pb-2">About firm</h4>
+                            <p>{{about}}</p>
+                            <h4 class="box-title pb-2 pt-5">Business Description</h4>
+                            <p>{{businessdescription}}</p>
+                            <h2 class="mt-5">
+                                Click button to<small class="text-success"> Verify</small>
+                            </h2>
+                                <i class="fa fa-shopping-cart"></i>
+                            <button *ngIf="!is_varified" class="btn btn-primary btn-rounded pb-2 pt-2 ps-5 pe-5 mt-2" (click)="verifyfirm(_id)">Verify Firm</button>
+                            <button *ngIf="is_varified" class="btn btn-danger btn-rounded pb-2 pt-2 ps-5 pe-5 mt-2" (click)="unverifyfirm(_id)">Unverify Firm</button>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <h3 class="box-title mt-5">Awards</h3>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa fa-check text-success"></i>{{awards}}</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <h3 class="box-title mt-5">website</h3>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa fa-check text-success"></i>{{website}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

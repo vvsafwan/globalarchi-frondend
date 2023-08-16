@@ -20,6 +20,7 @@ import { CommonInterceptor } from './common.interceptor';
 import { SocketIoModule } from 'ngx-socket-io';
 import { BookingComponent } from './components/User/booking/booking.component';
 import { BookinglistComponent } from './components/User/bookinglist/bookinglist.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 // import { SearchpipePipe } from './components/User/searchpipe.pipe';
 // import { HomeComponent } from './components/User/home/home.component';
 // import { UsernavComponent } from './components/User/usernav/usernav.component';
@@ -72,6 +73,7 @@ import { BookinglistComponent } from './components/User/bookinglist/bookinglist.
     AppComponent,
     BookingComponent,
     BookinglistComponent,
+    PagenotfoundComponent,
     // SearchpipePipe,
     // HomeComponent,
     // UsernavComponent,
@@ -137,7 +139,7 @@ import { BookinglistComponent } from './components/User/bookinglist/bookinglist.
       allUserFirms:UserFirmReducer,
       allBookings:BookingReducer
     }),
-    SocketIoModule.forRoot({ url: 'http://localhost:3000' }),
+    SocketIoModule.forRoot({ url: 'https://globalarchi.online' }),
     EffectsModule.forRoot([appEffects])
   ],
   providers: [

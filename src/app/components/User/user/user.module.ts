@@ -54,7 +54,7 @@ import { ReviewComponent } from '../review/review.component';
     ReactiveFormsModule,
     MatDialogModule,
     ToastrModule.forRoot(),
-    SocketIoModule.forRoot({ url: 'http://localhost:3000' }),
+    SocketIoModule.forRoot({ url: 'https://globalarchi.online' }),
   ],
   
 })

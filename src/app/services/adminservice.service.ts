@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class AdminserviceService {
 
-  apiUrl: string = "http://localhost:3000/admin"
+  apiUrl: string = "https://globalarchi.online/admin"
 
   constructor(
     private http: HttpClient

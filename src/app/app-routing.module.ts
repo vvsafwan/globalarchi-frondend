@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 // import { LoginComponent } from './components/User/login/login.component';
 // import { RegisterComponent } from './components/User/register/register.component';
 // import { ProLoginComponent } from './components/Pro/pro-login/pro-login.component';
@@ -40,7 +41,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', loadChildren: () => import('./components/User/user/user.module').then(m => m.UserModule) },
   { path: 'pro', loadChildren: () => import('./components/Pro/professional/professional.module').then(m => m.ProfessionalModule) },
-  { path: 'admin', loadChildren: () => import('./components/Admin/admin/admin.module').then(m => m.AdminModule) }
+  { path: 'admin', loadChildren: () => import('./components/Admin/admin/admin.module').then(m => m.AdminModule) },
+  { path:'**', component:PagenotfoundComponent }
   // {path:'',component:HomeComponent},
   // {path:'login',component:LoginComponent},
   // {path:'register',component:RegisterComponent},

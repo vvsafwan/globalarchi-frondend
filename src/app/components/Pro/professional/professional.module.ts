@@ -60,7 +60,7 @@ import { ProBookinglistComponent } from '../pro-bookinglist/pro-bookinglist.comp
     ReactiveFormsModule,
     MatIconModule,
     ToastrModule.forRoot(),
-    SocketIoModule.forRoot({ url: 'http://localhost:3000' }),
+    SocketIoModule.forRoot({ url: 'https://globalarchi.online' }),
   ]
 })
 export class ProfessionalModule { }

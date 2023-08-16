@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class UserserviceService {
 
-  apiUrl: string = "http://localhost:3000"
+  apiUrl: string = "https://globalarchi.online"
 
   constructor(
     private http: HttpClient

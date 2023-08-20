@@ -24,6 +24,8 @@ import { ContactComponent } from '../chat/contact/contact.component';
 import { SearchpipePipe } from '../searchpipe.pipe';
 import { FooterComponent } from '../footer/footer.component';
 import { ReviewComponent } from '../review/review.component';
+import { BookingComponent } from '../booking/booking.component';
+import { BookinglistComponent } from '../bookinglist/bookinglist.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { ReviewComponent } from '../review/review.component';
     ChatComponent,
     SearchpipePipe,
     FooterComponent,
-    ReviewComponent
+    ReviewComponent,
+    BookingComponent,
+    BookinglistComponent,
   ],
   imports: [
     CommonModule,

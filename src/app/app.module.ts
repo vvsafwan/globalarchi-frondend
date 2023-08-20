@@ -18,9 +18,9 @@ import { ProserviceService } from './services/proservice.service';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonInterceptor } from './common.interceptor';
 import { SocketIoModule } from 'ngx-socket-io';
-import { BookingComponent } from './components/User/booking/booking.component';
-import { BookinglistComponent } from './components/User/bookinglist/bookinglist.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+// import { BookingComponent } from './components/User/booking/booking.component';
+// import { BookinglistComponent } from './components/User/bookinglist/bookinglist.component';
 // import { SearchpipePipe } from './components/User/searchpipe.pipe';
 // import { HomeComponent } from './components/User/home/home.component';
 // import { UsernavComponent } from './components/User/usernav/usernav.component';
@@ -71,8 +71,6 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 @NgModule({
   declarations: [
     AppComponent,
-    BookingComponent,
-    BookinglistComponent,
     PagenotfoundComponent,
     // SearchpipePipe,
     // HomeComponent,

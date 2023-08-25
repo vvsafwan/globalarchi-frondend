@@ -137,7 +137,7 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
       allUserFirms:UserFirmReducer,
       allBookings:BookingReducer
     }),
-    SocketIoModule.forRoot({ url: 'https://globalarchi.online' }),
+    SocketIoModule.forRoot({ url: 'http://localhost:3000' }),
     EffectsModule.forRoot([appEffects])
   ],
   providers: [

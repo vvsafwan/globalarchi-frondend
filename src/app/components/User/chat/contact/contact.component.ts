@@ -29,7 +29,7 @@ export class ContactComponent implements OnInit {
       this.userdata = res.data
     })
   }
-  fullchat(id:string){
-    this.chatcomponent.fullchat(id);
+  fullchat(id:string,name:string,image:string){
+    this.chatcomponent.fullchat(id,name,image);
   }
 }

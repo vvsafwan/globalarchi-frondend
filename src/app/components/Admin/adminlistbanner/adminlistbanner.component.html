@@ -20,7 +20,7 @@
                   <tr *ngFor="let banner of bannerdata;let i = index">
                     <th scope="row">{{i+1}}</th>
                     <td>{{banner.header}}</td>
-                    <td><img class="rounded-circle" [src]='"https://globalarchi.online/file/"+banner.image' alt="No image" width="40px" height="35px"></td>
+                    <td><img class="rounded-circle" [src]='"http://localhost:3000/file/"+banner.image' alt="No image" width="40px" height="35px"></td>
                     <td >{{banner.description}}</td>
                     <td>{{banner.status}}</td>
                     <td>

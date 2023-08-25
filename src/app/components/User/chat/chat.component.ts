@@ -17,6 +17,9 @@ export class ChatComponent implements OnInit {
   message:string = ''
   connectionId:string = ''
   userid:string = ''
+  proname:string = ''
+  image:string = ''
+  imageuser:string = ''
 
   constructor(
     private http: HttpClient,
@@ -31,6 +34,13 @@ export class ChatComponent implements OnInit {
       if(this.viewerid == newMessage.from){
         this.messages.push(newMessage )
       }
+    })    
+    this.loadprofileimage()
+  }
+  loadprofileimage(){
+    this.userservice.loadprofileimage()
+    .subscribe((res: any)=>{
+      this.imageuser = res.image
     })
   }
   @ViewChild('chatContainer') chatContainer!: ElementRef 
@@ -54,8 +64,12 @@ export class ChatComponent implements OnInit {
     })
   }
 
-  fullchat(professionalid:string){
+  fullchat(professionalid:string,name:string,image:string){
     this.viewerid = professionalid
+    this.proname = name
+    this.image = image
+    console.log(image);
+    
     this.chatshow = true
     this.userservice.chatblock(professionalid)
     .subscribe((res:any)=>{

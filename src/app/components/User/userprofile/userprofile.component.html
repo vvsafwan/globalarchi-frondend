@@ -4,10 +4,17 @@
         <!-- Column -->
         <div class="card"> <img class="card-img-top" src="../../../../assets/img/homeImg2.jpg" alt="Card image cap" style="width: 100%;object-fit: cover;">
             <div class="card-body little-profile text-center">
-                <div class="pro-img"><img src="https://i.imgur.com/8RKXAIV.jpg" alt="user"></div>
+                <div class="pro-img"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAB5CAMAAAAqJH57AAAAMFBMVEXk5ueutLfo6eq8wcSrsbSyuLu3vL/Lz9Hd4OHU19na3d7P09WnrrHBxsjX2tvh4+TmKhUaAAAChUlEQVRoge2a3ZKkIAxGIfwpKL7/2y529+5sdysmmkhNFedyLuYMAQJ8jlKdTqfT6XQ6nU5nHwBoIFVDTCGENMblRj+oPHttXzgfhnvcoJK3Vv+HtSbe4Iak37RPJiM9blj8hvfhDqJqGHe8a829pDjti4vaiVUcQk1ccIOQuDriJ4uIOU6HYu0l6g3H3jLXM78a5uNaFyb+noKp9aPe3GLlcWJtE/OgKy1EdtBgsGJtR9ZBD2gx88467F5vcHYycASxTYxmSrG1NozlzpRia8dnpk0z57mB7Jz/iHxm/G5esSOfGds6X2a+xU3aVKyt+xeZucQtV1i7XUXsJIxHBv5e8ICxbw+kJcZ5YrQ7JdvdDFQkiHnfGe1ugLWH8weO07uCvulzZweQka8b9iGXmW71olMKVWuBV2zDlzuqncikFQh1s3BIMIOsxUPWL5IpYLP0Ue0mrv6GpBlUcF8pM+8pUXHn2b0n63fG+kNevyaEFG/VFhf8sP7gHmlMYTbeuWetnfdmDln0Q0751TkYPU32c3GXv2CyPowigwcYgrFfzg+/C5FZXrRuaxt/27Wb+eQA2aC0f+U+KQ43qHGvYe7LXbjew4HufbmvjRviKe/TfSU5AIO8cG67T58ikAnrapOzJycxKNgeNn2lwYK7Xx+pXSaqIToO8Qrt6AbKq/UAWjo2cA14ZSKolyubaUONLvjC6i1Y7DI73bf2Qb16qIEfBtz3eNo3C6wa081oKTqaw6iKGnFiscfBoIh3Vec2Q9aHcQLqk/45bH2mRRb2y1wNbyT28g9Vs6R4qpV74D0q3ql1E8x/yVzAtJrm6r5iuXvtU5nn2UhSO7BAloq50+l0fhd/ABvxHTqrc3p+AAAAAElFTkSuQmCC" alt="user" *ngIf="!image"><img src="http://localhost:3000/file/{{image}}" alt="user" *ngIf="image"></div>
                 <h3 class="m-b-0">{{name}}</h3>
                 <h3 class="m-b-0">{{email}}</h3>
                 <p>{{mobile}}</p>
+                <div class="col-md-5 col-12 mx-auto">
+                    <label for="formFileLg" class="form-label">Update your profile</label>
+                    <form (ngSubmit)="profilesubmit()" [formGroup]="profileForm">
+                        <input class="form-control form-control-lg" formControlName="image" name="image" id="formFileLg" type="file" (change)="onFileSelected($event)"/>
+                        <button type="submit" class="m-t-10 waves-effect waves-dark btn btn-primary mt-4 btn-md btn-rounded" data-abc="true">Follow</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

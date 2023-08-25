@@ -58,7 +58,7 @@ import { BookinglistComponent } from '../bookinglist/bookinglist.component';
     ReactiveFormsModule,
     MatDialogModule,
     ToastrModule.forRoot(),
-    SocketIoModule.forRoot({ url: 'https://globalarchi.online' }),
+    SocketIoModule.forRoot({ url: 'http://localhost:3000' }),
   ],
   
 })

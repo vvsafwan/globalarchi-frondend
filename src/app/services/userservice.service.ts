@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class UserserviceService {
 
-  apiUrl: string = "https://globalarchi.online"
+  apiUrl: string = "http://localhost:3000"
 
   constructor(
     private http: HttpClient
@@ -112,4 +112,17 @@ export class UserserviceService {
   loadreview(id:any): Observable<any>{
     return this.http.get(`${this.apiUrl}/loadreview?id=${id}`)
   }
+
+  payagain(id:string): Observable<any>{
+    return this.http.post(`${this.apiUrl}/payagain?id=${id}`,{})
+  }
+
+  updateuserprofile(formdata:object){
+    return this.http.post(`${this.apiUrl}/updateuserprofile`,formdata)
+  }
+
+  loadprofileimage(): Observable<object>{
+    return this.http.get<object>(`${this.apiUrl}/profileimg`)
+  }
+
 }

@@ -28,11 +28,6 @@ export class UsernavComponent implements OnInit {
     })
   }
 
-  gotopro(){
-    localStorage.removeItem('session');
-    this.router.navigate(['/pro/login'])
-  }
-
   header_variable = false;
   @HostListener("document:scroll")
   scrollfunction(){

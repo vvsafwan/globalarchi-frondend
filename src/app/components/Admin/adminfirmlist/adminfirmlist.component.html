@@ -22,7 +22,7 @@
                 <tbody *ngIf="(firmsList$ | async) as firmdata">
                   <tr *ngFor="let firm of firmdata;let i = index">
                     <th scope="row">{{i+1}}</th>
-                    <td><img class="rounded-circle" [src]='"https://globalarchi.online/file/"+firm.image' alt="No image" width="40px" height="35px"></td>
+                    <td><img class="rounded-circle" [src]='"http://localhost:3000/file/"+firm.image' alt="No image" width="40px" height="35px"></td>
                     <td>{{firm.userid}}</td>
                     <td>{{firm.companyname}}</td>
                     <td>{{firm.address}}, {{firm.city}}, {{firm.state}}, {{firm.country}}, {{firm.pincode}}</td>

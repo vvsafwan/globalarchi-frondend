@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class ProserviceService {
 
-  apiUrl: string = "http://localhost:3000/pro"
+  apiUrl: string = "https://globalarchi.online/pro"
 
   constructor(
     private http: HttpClient

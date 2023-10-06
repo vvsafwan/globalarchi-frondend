@@ -16,6 +16,9 @@ export class ChatsComponent implements OnInit {
   connectionId: string = '';
   professionalId:string=''
   professionalchatdata:any
+  username:string = ''
+  image:string = ''
+  myimage!:string
 
   constructor(
     private proservice: ProserviceService,
@@ -30,6 +33,11 @@ export class ChatsComponent implements OnInit {
         this.messages.push(newMessage)
       }
     })
+    this.proservice.loadmyimg()
+    .subscribe((res:any)=>{
+      this.myimage = res.image
+      
+    })
   }
 
   getchatlist(){
@@ -42,8 +50,10 @@ export class ChatsComponent implements OnInit {
     })
   }
 
-  fullchat(userid: string) {
+  fullchat(userid: string,name:string,image:string) {
     this.userid = userid;
+    this.username = name
+    this.image = image
     this.proservice.chatblock(userid)
     .subscribe((res: any) => {
       this.socket.emit('join',res.cid) 

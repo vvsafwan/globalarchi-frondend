@@ -1,8 +1,10 @@
-<li class="p-2 border-bottom" (click)="fullchat(data.connections.user._id)" style="background-color: #eee;">
+<li class="p-2 border-bottom" (click)="fullchat(data.connections.user._id,data.connections.user.name,data.connections.user.image)" style="background-color: #eee;">
     <a class="d-flex justify-content-between">  
       <div class="d-flex flex-row">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp" alt="avatar"
-          class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60">
+        <img src="http://localhost:3000/file/{{data.connections.user.image}}" alt="avatar"
+          class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60" height="60" *ngIf="data.connections.user.image">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAB5CAMAAAAqJH57AAAAMFBMVEXk5ueutLfo6eq8wcSrsbSyuLu3vL/Lz9Hd4OHU19na3d7P09WnrrHBxsjX2tvh4+TmKhUaAAAChUlEQVRoge2a3ZKkIAxGIfwpKL7/2y529+5sdysmmkhNFedyLuYMAQJ8jlKdTqfT6XQ6nU5nHwBoIFVDTCGENMblRj+oPHttXzgfhnvcoJK3Vv+HtSbe4Iak37RPJiM9blj8hvfhDqJqGHe8a829pDjti4vaiVUcQk1ccIOQuDriJ4uIOU6HYu0l6g3H3jLXM78a5uNaFyb+noKp9aPe3GLlcWJtE/OgKy1EdtBgsGJtR9ZBD2gx88467F5vcHYycASxTYxmSrG1NozlzpRia8dnpk0z57mB7Jz/iHxm/G5esSOfGds6X2a+xU3aVKyt+xeZucQtV1i7XUXsJIxHBv5e8ICxbw+kJcZ5YrQ7JdvdDFQkiHnfGe1ugLWH8weO07uCvulzZweQka8b9iGXmW71olMKVWuBV2zDlzuqncikFQh1s3BIMIOsxUPWL5IpYLP0Ue0mrv6GpBlUcF8pM+8pUXHn2b0n63fG+kNevyaEFG/VFhf8sP7gHmlMYTbeuWetnfdmDln0Q0751TkYPU32c3GXv2CyPowigwcYgrFfzg+/C5FZXrRuaxt/27Wb+eQA2aC0f+U+KQ43qHGvYe7LXbjew4HufbmvjRviKe/TfSU5AIO8cG67T58ikAnrapOzJycxKNgeNn2lwYK7Xx+pXSaqIToO8Qrt6AbKq/UAWjo2cA14ZSKolyubaUONLvjC6i1Y7DI73bf2Qb16qIEfBtz3eNo3C6wa081oKTqaw6iKGnFiscfBoIh3Vec2Q9aHcQLqk/45bH2mRRb2y1wNbyT28g9Vs6R4qpV74D0q3ql1E8x/yVzAtJrm6r5iuXvtU5nn2UhSO7BAloq50+l0fhd/ABvxHTqrc3p+AAAAAElFTkSuQmCC" alt="avatar"
+          class="rounded-circle d-flex align-self-center me-3 shadow-1-strong" width="60" height="60" *ngIf="!data.connections.user.image">
         <div class="pt-1">
           <p class="fw-bold mb-0">{{data.connections.user.name}}</p>
           <p class="small text-muted">.....</p>

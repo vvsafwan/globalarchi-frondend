@@ -8,7 +8,6 @@ import { ProserviceService } from 'src/app/services/proservice.service';
   styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent implements OnInit {
-
   @Input() data: any;
   constructor(
     private proservice: ProserviceService,
@@ -17,8 +16,8 @@ export class ContactsComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  fullchat(id:string){
-    this.chatcomponent.fullchat(id)
+  fullchat(id:string,name:string,image:string){
+    this.chatcomponent.fullchat(id,name,image);
   }
 
 }

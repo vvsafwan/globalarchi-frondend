@@ -138,4 +138,12 @@ export class ProserviceService {
     return this.http.get(`${this.apiUrl}/loadprobookings`)
   }
 
+  loaduserprofile(id:string): Observable<object>{
+    return this.http.get<object>(`${this.apiUrl}/loaduserprofile?id=${id}`)
+  }
+
+  loadmyimg(): Observable<object>{
+    return this.http.get<object>(`${this.apiUrl}/loadmyimg`)
+  }
+
 }

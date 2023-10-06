@@ -10,7 +10,7 @@ import { ProserviceService } from 'src/app/services/proservice.service';
 export class BusinessdetailslistComponent implements OnInit {
 
   jwt!:string|null;
-  userid:any;
+  userid!:string;
   companyname!:string
   city!:string
   mobile!:string
@@ -80,7 +80,7 @@ export class BusinessdetailslistComponent implements OnInit {
     
   }
 
-  projectdetails(id:any,name:string,address:string){
+  projectdetails(id:string,name:string,address:string){
     this.router.navigate(['/pro/projectdetails',id,name,address]);
   }
 

@@ -14,15 +14,15 @@ export class ProprofileComponent implements OnInit {
   name!:string;
   email!:string;
   mobile!:number;
+  image!:string;
 
   ngOnInit(): void {
     this.proservice.proprofile()
     .subscribe((res)=>{
-      console.log(res);
-      
       this.name = res.name;
       this.email = res.email;
       this.mobile = res.mobile
+      this.image = res.image;
     })
   }
 }
